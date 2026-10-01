@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Payment status — Chocoeta</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body{min-height:100vh;display:grid;place-items:center;background:#100b07;color:#f5ead7;font-family:Arial,sans-serif;padding:24px}
+    main{text-align:center;max-width:520px;padding:42px;border:1px solid #75501b;background:#18110b}
+    h1{color:#d5a13c}p{line-height:1.7;color:#d4c5ae}a{display:inline-block;margin-top:18px;padding:12px 20px;background:#d5a13c;color:#160f08;text-decoration:none;font-weight:bold}
+  </style>
+</head>
+<body>
+  <main>
+    <h1 id="heading">Checking your payment…</h1>
+    <p id="message">Please wait while we confirm the order with the payment provider.</p>
+    <a href="index.html">Return to Chocoeta</a>
+  </main>
+  <script>
+    const params=new URLSearchParams(location.search), order=params.get('order');
+    const heading=document.getElementById('heading'), message=document.getElementById('message');
+    if(params.has('cancelled')){heading.textContent='Checkout cancelled';message.textContent='No payment was confirmed. Your cart is still available when you return.';}
+    else if(!order){heading.textContent='Order not found';message.textContent='Return to the shop and try again.';}
+    else{
+      let attempts=0;
+      async function check(){
+        try{
+          const response=await fetch('/api/orders/'+encodeURIComponent(order));
+          const data=await response.json();
+          if(data.status==='paid'){heading.textContent='Payment confirmed';message.textContent='Thank you! Your Chocoeta order has been received.';return;}
+          if(data.status==='failed'||data.status==='setup_failed'){heading.textContent='Payment not completed';message.textContent='The payment did not complete. You can return to the shop and try again.';return;}
+          attempts++;
+          if(attempts<15){setTimeout(check,2000);return;}
+          heading.textContent='Payment is processing';message.textContent='We are waiting for the provider’s confirmation. Please check again shortly or contact the shop with your order reference.';
+        }catch{heading.textContent='Could not check payment';message.textContent='Please contact the shop with your order reference.';}
+      }
+      check();
+    }
+  </script>
+</body>
+</html>

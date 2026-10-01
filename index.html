@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chocoeta — The Premium Chocolate</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="style.css" rel="stylesheet">
+ <link rel="icon" href="images/Chocoeta_Logo.png" type="image/x-icon">
+
+  <link rel="stylesheet" href="chocoeta.css">
+</head>
+<body>
+
+<!-- ANNOUNCEMENT -->
+<div class="abar">🍫 Free shipping above 2499PKR &nbsp;·&nbsp; Code <strong>CHOCO10</strong> for 10% off your first order</div>
+
+<!-- HEADER -->
+<header id="mainHeader">
+  <nav>
+    <div class="nav-left">
+      <a href="#home">Home</a>
+      <a href="#products">Shop</a>
+      <a href="#story">Our Story</a>
+    </div>
+    <a href="#home" class="nav-logo">Choco<em>eta</em></a>
+    <div class="nav-right">
+      <div class="nav-right-links">
+        <a href="#featured">Bestsellers</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <button class="cart-btn" onclick="openCart()">
+        🛒 Cart <span id="cartCountNav">(0)</span>
+      </button>
+      <div class="hamburger" onclick="openMob()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- MOB NAV -->
+<div class="mob-nav" id="mobNav">
+  <button class="mob-close" onclick="closeMob()">✕</button>
+  <a href="#home" onclick="closeMob()">Home</a>
+  <a href="#products" onclick="closeMob()">Shop</a>
+  <a href="#story" onclick="closeMob()">Our Story</a>
+  <a href="#featured" onclick="closeMob()">Bestsellers</a>
+  <a href="#contact" onclick="closeMob()">Contact</a>
+</div>
+
+<!-- ═══════ HERO ═══════ -->
+<section id="home">
+  <div class="hero">
+    <div class="hero-bg"></div>
+    <div class="bokeh" id="bokehWrap"></div>
+    <div class="hero-inner">
+      <div class="hero-text">
+        <div class="hero-eyebrow">Made in Pakistan</div>
+        <h1 class="hero-h1">
+          Where Cocoa<br>Becomes
+          <em>Art.</em>
+        </h1>
+        <p class="hero-p">Chocoeta reimagines the chocolate bonbon — each piece handcrafted from rare single-origin cocoa, cloaked in gold, and designed to be remembered.</p>
+        <div class="hero-ctas">
+          <a href="#products" class="btn-fill">Explore Collection →</a>
+          <a href="#story" class="btn-ghost">Our Craft</a>
+        </div>
+        <div class="hero-trust">
+          <div class="trust-item">✦ 100% Natural</div>
+          <div class="trust-item">✦ No Preservatives</div>
+          <div class="trust-item">✦ Fast Delivery</div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-img-frame">
+          <img src="images/1.png" alt="Chocoeta Premium Chocolates">
+          <div class="hero-badge"><span class="hero-badge-text">Nova Classic Blend</span></div>
+        </div>
+        <div class="hero-float-card">
+          <div class="number">10K+</div>
+          <div class="label">Happy Customers</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-inner">
+    <span class="ticker-item">Premium Chocolate</span>
+    <span class="ticker-item">Gold Wrapped Bonbons</span>
+    <span class="ticker-item">Nova Classic Blend</span>
+    <span class="ticker-item">Single Origin Cocoa</span>
+    <span class="ticker-item">Handcrafted Daily</span>
+    <span class="ticker-item">Perfect Gifting</span>
+    <span class="ticker-item">Premium Chocolate</span>
+    <span class="ticker-item">Gold Wrapped Bonbons</span>
+    <span class="ticker-item">Nova Classic Blend</span>
+    <span class="ticker-item">Single Origin Cocoa</span>
+    <span class="ticker-item">Handcrafted Daily</span>
+    <span class="ticker-item">Perfect Gifting</span>
+  </div>
+</div>
+
+<!-- ═══════ PRODUCTS ═══════ -->
+<div class="products-bg" id="products">
+  <div class="sw">
+    <div class="products-header sr">
+      <div>
+        <div class="eyebrow">The Collection</div>
+        <h2 class="section-title">Crafted for <em>Pleasure</em></h2>
+      </div>
+      <button class="btn-ghost" onclick="toast('Full catalogue launching soon!')">View All →</button>
+    </div>
+
+    <div class="filter-tabs sr">
+      <button class="filter-tab active">All Products</button>
+      <button class="filter-tab">Classic</button>
+      <button class="filter-tab">Gift Sets</button>
+      <button class="filter-tab">Dark</button>
+    </div>
+
+    <div class="products-grid">
+      <div class="p-card tilt-card sr">
+        <div class="p-img">
+          <img src="images/Chocolate_bars_and_treat_jar_2K_20261001105428.jpg" alt="Nova Classic Jar">
+          <span class="p-pill">Arriving Soon    </span>
+          <div class="p-quick">
+            <button class="q-btn" onclick="addToCart('choco-nova-combo', this)">Add to Cart</button>
+            <button class="q-btn ol" title="Wishlist">♡</button>
+          </div>
+        </div>
+        <div class="p-body">
+          <div class="p-name">Choco Nova Combo</div>
+          <div class="p-sub">Bon-Bon· 20 Pieces + 5 Classic Bars</div>
+          <p class="p-desc">A generous jar of 20 gold-wrapped assorted chocolate bonbons — every one a miniature masterpiece alongside 5 classic chocolate bar for the ultimate chocolate experience. </p>
+          <div class="p-footer">
+            <div class="p-price">Rs.999 <small>/ bundle</small></div>
+            <div class="p-stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-card tilt-card sr sr-d1">
+        <div class="p-img">
+          <img src="images/4.png" alt="Gift Combo Box">
+          <span class="p-pill new-pill">Arriving Soon</span>
+          <div class="p-quick">
+            <button class="q-btn" onclick="addToCart('nova-bar', this)">Add to Cart</button>
+            <button class="q-btn ol" title="Wishlist">♡</button>
+          </div>
+        </div>
+        <div class="p-body">
+          <div class="p-name">Nova Bar</div>
+          <div class="p-sub">Chocoeta · Classic Chocolate Bar</div>
+          <p class="p-desc">Individually wrapped bonbons in a rainbow of ribbon colours. The perfect thoughtful gift for any occasion.</p>
+          <div class="p-footer">
+            <div class="p-price">Rs.99 <small>/ bar</small></div>
+            <div class="p-stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-card tilt-card sr sr-d2">
+        <div class="p-img">
+          <img src="images/CHOCOETA_NOVA_Classic_jar_chocol…_202607110616.jpeg" alt="Premium Dark Collection">
+          <span class="p-pill">Most Popular</span>
+          <div class="p-quick">
+            <button class="q-btn" onclick="addToCart('nova-classic-jar', this)">Add to Cart</button>
+            <button class="q-btn ol" title="Wishlist">♡</button>
+          </div>
+        </div>
+        <div class="p-body">
+          <div class="p-name">Nova Classic Jar</div>
+          <div class="p-sub">Chocoeta · Classic Chocolate Bonbons</div>
+          <p class="p-desc">Intense dark chocolate bonbons with velvety ganache centres in an embossed luxury box. For true connoisseurs.</p>
+          <div class="p-footer">
+            <div class="p-price">Rs.399 <small>/ jar</small></div>
+            <div class="p-stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════ STORY ═══════ -->
+<div class="story-bg" id="story">
+  <div class="sw">
+    <div class="story-grid">
+      <div class="story-img-wrap sr">
+        <video width="600" controls autoplay muted loop poster="thumbnail.jpg">
+          <source src="images/4458592-uhd_4096_2160_24fps.mp4" type="video/mp4">
+        </video>
+        <div class="story-border"></div>
+        <div class="story-accent"></div>
+        <div class="story-stat">
+          <span class="sn">100%</span>
+          <span class="sl">Natural Cocoa</span>
+        </div>
+      </div>
+      <div class="story-body sr sr-d1">
+        <div class="eyebrow">Our Story</div>
+        <h2 class="section-title">Born from a<br><em>Love for Chocolate</em></h2>
+        <br>
+        <p>Chocoeta was built on one unwavering conviction — that chocolate should be a genuine sensory experience, not just a snack. Every jar, every bonbon, every ribbon is an expression of that belief.</p>
+        <p>We source only the finest cocoa beans and work with small-batch artisans who share our obsession with quality. The result is a chocolate you remember long after the last piece is gone.</p>
+        <div class="story-pills">
+          <div class="story-pill">Single Origin</div>
+          <div class="story-pill">No Artificial Colours</div>
+          <div class="story-pill">Small Batch</div>
+          <div class="story-pill">Gold Wrapped</div>
+        </div>
+        <a href="#products" class="btn-fill">Shop Now →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════ ETA PHILOSOPHY SECTION ═══════ -->
+<section id="eta-root">
+
+  <div class="eta-glow-wrap">
+    <div class="eta-glow-left"></div>
+    <div class="eta-glow-right"></div>
+  </div>
+
+  <div class="eta-watermark">ETA</div>
+
+  <div class="eta-container">
+
+    <!-- HEADER -->
+    <div id="etaHdr" class="wr eta-center">
+      <div class="eta-heading-line">
+        <span></span>The Chocoeta Philosophy<span></span>
+      </div>
+
+      <h2 class="eta-title">
+        What does <span class="eta-letter-E">E</span><span class="eta-letter-T">T</span><span class="eta-letter-A">A</span> mean?
+      </h2>
+
+      <p class="eta-sub">
+        Three letters. One beating soul. The love for chocolate — the feeling, the flavour, the blast of pure cocoa that dissolves on your tongue and turns every shared moment into a memory that lasts forever.
+      </p>
+    </div>
+
+    <!-- CARDS -->
+    <div id="etaCW">
+
+      <div class="etaC wr">
+        <div class="bar"></div>
+        <div class="eta-bg-letter">E</div>
+
+        <span class="bL">E</span>
+        <div class="eta-mini">Experience</div>
+        <div class="eta-card-title">The <em>Chocolate</em><br>Experience</div>
+
+        <p class="eta-text">
+          The moment a Chocoeta bonbon touches your lips — gold foil falls away, pure cocoa floods your senses — warm, velvety, <em>alive</em>.
+        </p>
+
+        <div class="eta-tags">
+          <span>Warmth</span><span>Richness</span><span>Sensation</span><span>Wonder</span>
+        </div>
+
+        <div class="pill">Feel Every Moment</div>
+      </div>
+
+      <div class="etaC wr">
+        <div class="bar"></div>
+        <div class="eta-bg-letter">T</div>
+
+        <span class="bL">T</span>
+        <div class="eta-mini">Taste</div>
+        <div class="eta-card-title"><em>Pure</em> Chocolate<br>Like Never Before</div>
+
+        <p class="eta-text">
+          That blast of pure flavour — the second it dissolves on your tongue — is a revelation.
+        </p>
+
+        <div class="eta-tags">
+          <span>Pure Cocoa</span><span>Dissolves</span><span>Velvety</span><span>Bliss</span>
+        </div>
+
+        <div class="pill">Pure & Uncompromised</div>
+      </div>
+
+      <div class="etaC wr">
+        <div class="bar"></div>
+        <div class="eta-bg-letter">A</div>
+
+        <span class="bL">A</span>
+        <div class="eta-mini">Adore</div>
+        <div class="eta-card-title"><em>Adore</em> Every<br>Shared Moment</div>
+
+        <p class="eta-text">
+          Chocolate is love made edible. Chocoeta turns ordinary moments into memories.
+        </p>
+
+        <div class="eta-tags">
+          <span>Family</span><span>Friends</span><span>Love</span><span>Memories</span>
+        </div>
+
+        <div class="pill">Cherish Every Moment</div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+    <!-- MANIFESTO -->
+    <div id="etaMani" class="wr" style="background:linear-gradient(135deg,#2e1a07 0%,#1e1005 100%);border:1px solid rgba(200,146,42,.25);padding:4rem;position:relative;overflow:hidden;margin-bottom:1.8rem;">
+      <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#c8922a 20%,#e8b84b 50%,#c8922a 80%,transparent);"></div>
+      <div aria-hidden="true" style="position:absolute;inset:0;overflow:hidden;pointer-events:none;display:flex;align-items:center;">
+        <div style="white-space:nowrap;font-family:'DM Serif Display',serif;font-size:5rem;color:rgba(200,146,42,.05);letter-spacing:.3em;animation:etaScroll 22s linear infinite;">
+          LOVE &nbsp;&middot;&nbsp; TASTE &nbsp;&middot;&nbsp; FEEL &nbsp;&middot;&nbsp; SHARE &nbsp;&middot;&nbsp; ADORE &nbsp;&middot;&nbsp; EXPERIENCE &nbsp;&middot;&nbsp; LOVE &nbsp;&middot;&nbsp; TASTE &nbsp;&middot;&nbsp; FEEL &nbsp;&middot;&nbsp; SHARE &nbsp;&middot;&nbsp; ADORE &nbsp;&middot;&nbsp; EXPERIENCE &nbsp;&middot;&nbsp;
+        </div>
+      </div>
+      <div id="etaMG" style="position:relative;z-index:1;display:grid;grid-template-columns:1fr auto 1fr;gap:3.5rem;align-items:center;">
+        <div>
+          <div style="font-family:'DM Serif Display',serif;font-style:italic;font-size:4rem;color:rgba(200,146,42,.2);line-height:.9;margin-bottom:1rem;">"</div>
+          <p style="font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.05rem;line-height:1.9;color:rgba(253,244,227,.75);">
+            When that bonbon melts on your tongue — pure cocoa blooming, warmth spreading through your chest — <strong style="font-style:normal;color:#e8b84b;">that is not just chocolate dissolving. That is a memory being made.</strong>
+          </p>
+          <div style="margin-top:1.4rem;display:flex;align-items:center;gap:.8rem;">
+            <div style="width:30px;height:1px;background:#c8922a;opacity:.6;"></div>
+            <span style="font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8922a;">The Chocoeta Promise</span>
+          </div>
+        </div>
+        <div style="text-align:center;min-width:150px;">
+          <div style="width:130px;height:130px;border-radius:50%;border:1px solid rgba(200,146,42,.35);background:rgba(200,146,42,.07);display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 auto;position:relative;box-shadow:0 0 40px rgba(200,146,42,.12);">
+            <div style="position:absolute;inset:8px;border-radius:50%;border:1px solid rgba(200,146,42,.15);"></div>
+            <div style="font-family:'DM Serif Display',serif;font-style:italic;font-size:2.6rem;color:#c8922a;line-height:1;position:relative;z-index:1;">ETA</div>
+            <div style="font-size:.44rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(200,146,42,.55);margin-top:.3rem;position:relative;z-index:1;">Chocoeta</div>
+          </div>
+          <div style="display:flex;justify-content:center;gap:.5rem;margin-top:1.2rem;">
+            <div style="width:7px;height:7px;border-radius:50%;background:#c8922a;animation:etaDot 2s 0.0s ease-in-out infinite;"></div>
+            <div style="width:7px;height:7px;border-radius:50%;background:#c8922a;animation:etaDot 2s 0.3s ease-in-out infinite;"></div>
+            <div style="width:7px;height:7px;border-radius:50%;background:#c8922a;animation:etaDot 2s 0.6s ease-in-out infinite;"></div>
+          </div>
+        </div>
+        <div style="text-align:right;">
+          <div style="font-family:'DM Serif Display',serif;font-style:italic;font-size:4rem;color:rgba(200,146,42,.2);line-height:.9;margin-bottom:1rem;">"</div>
+          <p style="font-family:'Libre Baskerville',serif;font-style:italic;font-size:1.05rem;line-height:1.9;color:rgba(253,244,227,.75);">
+            <strong style="font-style:normal;color:#e8b84b;">For families, friends, weddings, festivals and every corporate moment</strong> — Chocoeta is there, turning the everyday into the unforgettable.
+          </p>
+          <div style="margin-top:1.4rem;display:flex;align-items:center;justify-content:flex-end;gap:.8rem;">
+            <span style="font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8922a;">Spread the Love</span>
+            <div style="width:30px;height:1px;background:#c8922a;opacity:.6;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MOMENTS -->
+    <div id="etaMW" class="wr" style="display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;">
+      <div class="etaMom"><div style="font-size:2rem;margin-bottom:.7rem;">🎂</div><div style="font-family:'DM Serif Display',serif;font-size:.95rem;color:#fdf4e3;margin-bottom:.25rem;">Birthdays</div><div style="font-size:.68rem;color:rgba(253,244,227,.4);">Make it golden</div></div>
+      <div class="etaMom"><div style="font-size:2rem;margin-bottom:.7rem;">🪔</div><div style="font-family:'DM Serif Display',serif;font-size:.95rem;color:#fdf4e3;margin-bottom:.25rem;">Festivals</div><div style="font-size:.68rem;color:rgba(253,244,227,.4);">Sweeten traditions</div></div>
+      <div class="etaMom"><div style="font-size:2rem;margin-bottom:.7rem;">💛</div><div style="font-family:'DM Serif Display',serif;font-size:.95rem;color:#fdf4e3;margin-bottom:.25rem;">Love &amp; Care</div><div style="font-size:.68rem;color:rgba(253,244,227,.4);">Gift from the heart</div></div>
+      <div class="etaMom"><div style="font-size:2rem;margin-bottom:.7rem;">👨‍👩‍👧‍👦</div><div style="font-family:'DM Serif Display',serif;font-size:.95rem;color:#fdf4e3;margin-bottom:.25rem;">Family Time</div><div style="font-size:.68rem;color:rgba(253,244,227,.4);">Bond over chocolate</div></div>
+      <div class="etaMom"><div style="font-size:2rem;margin-bottom:.7rem;">💍</div><div style="font-family:'DM Serif Display',serif;font-size:.95rem;color:#fdf4e3;margin-bottom:.25rem;">Weddings</div><div style="font-size:.68rem;color:rgba(253,244,227,.4);">Sweeten the vows</div></div>
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- ═══════ FEATURED ═══════ -->
+
+<div class="feat-bg" id="featured">
+  <div class="feat-inner">
+    <div class="feat-img">
+      <img src="images/CHOCOETA_NOVA_Classic_jar_chocol…_202607110616.jpeg" alt="Nova Classic Featured">
+    </div>
+    <div class="feat-content">
+      <div class="feat-quote">"</div>
+      <div class="eyebrow">Featured Product</div>
+      <h2 class="feat-title">Nova <em>Classic</em><br>Jar</h2>
+      <p class="feat-desc">20 handcrafted bonbons, each wrapped in gleaming gold foil with a colourful satin ribbon. A festival of flavours in one iconic jar.</p>
+
+      <div class="fl-label">Choose Flavour</div>
+      <div class="fl-grid">
+        <button class="fl-chip active">Classic </button>
+        <button class="fl-chip">Dark Roast</button>
+        <button class="fl-chip">Hazelnut</button>
+        <button class="fl-chip">Caramel</button>
+        <button class="fl-chip">Mixed Assorted</button>
+      </div>
+
+      <div class="feat-price-row">
+        <div class="feat-old">Rs.499 </div>
+        <div class="feat-price">Rs.399 </div>
+        <div class="feat-save">save Rs.99 </div>
+      </div>
+
+      <div class="qty-row">
+        <button class="qty-btn" onclick="changeQty(-1)">−</button>
+        <input class="qty-num" type="number" value="1" min="1" max="99" id="qtyInput" readonly>
+        <button class="qty-btn" onclick="changeQty(1)">+</button>
+      </div>
+
+      <div class="feat-acts">
+        <button class="btn-fill" onclick="addFeatured()">Add to Cart →</button>
+        <button class="btn-ghost" onclick="buyFeaturedNow()">Buy Now</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════ WHY ═══════ -->
+<div class="why-bg">
+  <div class="sw">
+    <div style="text-align:center" class="sr">
+      <div class="eyebrow" style="justify-content:center">Why Choose Us</div>
+      <h2 class="section-title">The <em>Chocoeta</em> Promise</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card sr">
+        <span class="why-icon">🌿</span>
+        <div class="why-title">All Natural</div>
+        <p class="why-desc">Zero artificial colours, flavours or preservatives. Every ingredient is traceable and thoughtfully chosen.</p>
+      </div>
+      <div class="why-card sr sr-d1">
+        <span class="why-icon">🏺</span>
+        <div class="why-title">Small Batch Craft</div>
+        <p class="why-desc">Made in small batches for superior freshness and quality control large factories simply can't match.</p>
+      </div>
+      <div class="why-card sr sr-d2">
+        <span class="why-icon">🎁</span>
+        <div class="why-title">Gift-Perfect Packaging</div>
+        <p class="why-desc">Gold foil, satin ribbons, embossed boxes — every Chocoeta product arrives looking extraordinary.</p>
+      </div>
+      <div class="why-card sr sr-d3">
+        <span class="why-icon">🚀</span>
+        <div class="why-title">Fast, Safe Delivery</div>
+        <p class="why-desc">Temperature-controlled packaging ships across Karachi. Your chocolates arrive in perfect condition, always.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════ GALLERY ═══════ -->
+<div class="gallery-strip">
+  <div class="g-cell">
+    <img src="images/Couple_enjoying_Choco_Eta_chocolate_2K_20261001005937.jpg">
+    <div class="g-overlay"><span class="g-label"></span></div>
+  </div>
+  <div class="g-cell">
+    <img src="images/h1.jpeg">
+    <div class="g-overlay"><span class="g-label"></span></div>
+  </div>
+  <div class="g-cell">
+    <img src="images/Boy_eating_Choco_Eta_chocolate_2K_20261001005927.jpg">
+    <div class="g-overlay"><span class="g-label"></span></div>
+  </div>
+</div>
+
+<!-- ═══════ TESTIMONIALS ═══════ -->
+<div class="testi-bg">
+  <div class="sw">
+    <div style="text-align:center" class="sr">
+      <div class="eyebrow" style="justify-content:center">Customer Reviews</div>
+      <h2 class="section-title">What People Are <em>Saying</em></h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card sr">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">Chocoeta's Nova Classic jar was the absolute showstopper at our Eid gifting this year. Every guest asked where we sourced them.</p>
+        <div class="testi-author">Anum Siddiqui</div>
+        <div class="testi-loc">Karachi · Verified Purchase</div>
+      </div>
+      <div class="testi-card sr sr-d1">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">I've tasted Belgian and Swiss chocolates. Chocoeta holds its own. The depth of flavour in the dark bonbons is genuinely world-class.</p>
+        <div class="testi-author">Yousuf Ahmad</div>
+        <div class="testi-loc">Karachi · Verified Purchase</div>
+      </div>
+      <div class="testi-card sr sr-d2">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">The gold wrapping, the presentation, the taste — absolute perfection. I've reordered three times already and have no plans to stop.</p>
+        <div class="testi-author">Shazia Khan</div>
+        <div class="testi-loc">Karachi · Verified Purchase</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════ NEWSLETTER ═══════ -->
+<div class="nl-bg" id="contact">
+  <div class="nl-inner sr">
+    <div class="eyebrow" style="justify-content:center">Stay Connected</div>
+    <h2 class="nl-title">Join the <em>Chocoeta</em> Family</h2>
+    <p class="nl-sub">Exclusive early access to new flavours, seasonal specials and members-only offers.</p>
+    <div class="nl-form">
+      <input type="email" placeholder="Your email address" id="nlInput">
+      <button onclick="subscribe()">Subscribe</button>
+    </div>
+    <p class="nl-note">No spam. Just sweetness. Unsubscribe anytime.</p>
+  </div>
+</div>
+
+<!-- ═══════ FOOTER ═══════ -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <span class="f-brand-logo">Chocoeta</span>
+      <p class="f-brand-tagline">"The art of chocolate, perfected — one gold-wrapped bonbon at a time."</p>
+      <div class="f-socials">
+        <a href="https://www.facebook.com/ChocoETA/" class="f-social" aria-label="Facebook" target="_blank">
+         <img src="images/fbbbb.jpeg" alt="">
+        </a>
+        <a href="https://www.instagram.com/chocoeta" class="f-social" aria-label="Instagram" target="_blank">
+         <img src="images/instaaa.jpeg" alt="">   
+        </a>
+        <a href="https://wa.me/923132867397" class="f-social" aria-label="WhatsApp" target="_blank">
+        <img src="images/whatssapp.jpeg" alt=""></a>
+
+      </div>
+    </div>
+    <div>
+      <div class="f-col-title">Shop</div>
+      <ul class="f-links">
+        <li><a href="#">Nova Classic Jar</a></li>
+        <li><a href="#">Gift Combo Boxes</a></li>
+        <li><a href="#">Dark Collection</a></li>
+        <li><a href="#">Corporate Orders</a></li>
+        <li><a href="#">Seasonal Specials</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="f-col-title">Company</div>
+      <ul class="f-links">
+        <li><a href="#">Our Story</a></li>
+        <li><a href="#">Sustainability</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Press</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+    </div>
+    <div class="f-contact">
+      <div class="f-col-title">Get in Touch</div>
+      <p>📍 Chocoeta HQ<br>Karachi, Pakistan 75850</p><br>
+      <p>📧 <a href="mailto:hello@chocoeta.com">officialchocoeta@gmail.com</a></p><br>
+      <p>📞 <a href="tel:+923132867397">+923132867397</a></p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="f-copy">© 2026 Chocoeta — The Premium Chocolate. All rights reserved.</span>
+    <div class="f-legal">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">Shipping Policy</a>
+      <a href="#">Refund Policy</a>
+    </div>
+  </div>
+</footer>
+
+<!-- CART DRAWER -->
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-head">
+    <div class="cart-head-title">Your Cart</div>
+    <button class="cart-close" onclick="closeCart()">✕</button>
+  </div>
+  <div class="cart-body" id="cartBody">
+    <div class="cart-empty-msg">
+      <div class="ei">🍫</div>
+      <p>Your cart is empty.<br>Add something delicious!</p>
+    </div>
+  </div>
+  <div class="cart-foot">
+    <div class="cart-total-row">
+      <span class="cart-total-lbl">Order Total</span>
+      <span class="cart-total-val" id="cartTotalVal">Rs.0</span>
+    </div>
+    <button class="cart-checkout" id="cartCheckout" onclick="proceedToCheckout()">Proceed to Checkout →</button>
+    <button class="cart-cont" onclick="closeCart()">Continue Shopping</button>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast-wrap">
+  <div class="toast" id="toastEl"></div>
+</div>
+
+
+<!-- ═══════════════════════════════════════
+  ✦ ANIMATION SYSTEMS
+  1. Magnetic Cursor
+  2. 3D Tilt on Hover (Product Cards)
+  3. Confetti Burst (Add to Cart)
+═══════════════════════════════════════ -->
+
+
+
+<!-- Cursor DOM elements -->
+<div id="mag-cursor-outer"></div>
+<div id="mag-cursor-inner"></div>
+<div id="mag-cursor-label"></div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
